@@ -1,6 +1,6 @@
 // pipeline {
 	agent any
-	stages {
+	// stages {
 		stage('Build')	{
 			steps {
 				sh 'g++ hello.cpp -o execute'
@@ -13,7 +13,7 @@
 				echo 'Test Stage Successful'
 			}
 		}
-		stage('Deploy')	{
+		// stage('Deploy')	{
 			steps {
 				echo 'Deploy Stage Successful'
 			}
