@@ -1,9 +1,9 @@
-// pipeline {
+pipeline {
 	agent any
-	// stages {
+	 stages {
 		stage('Build')	{
 			steps {
-				sh 'g++ hello.cpp -o execute'
+				sh 'g++ hellodv.cpp -o execute'
 				echo 'Build Stage Successful'
 			}
 		}
@@ -13,7 +13,7 @@
 				echo 'Test Stage Successful'
 			}
 		}
-		// stage('Deploy')	{
+		stage('Deploy')	{
 			steps {
 				echo 'Deploy Stage Successful'
 			}
