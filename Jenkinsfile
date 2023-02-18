@@ -1,27 +1,27 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh 'g-- ./main/PES2UG20CS075.cpp'
-        echo 'Build Stage Successful'
-      }
-    }
-    stage('Test') {
-      steps {
-        sh './a.out'
-        echo 'Test Stage Successful'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        echo 'Deployment Successful'
-      }
-    }
-  }
-  post {
-      failure {
-        echo 'Pipeline Failed'
-      }
-  }
+	agent any
+	stages {
+		stage('Build')	{
+			steps {
+				sh 'g++ hello.cpp -o execute'
+				echo 'Build Stage Successful'
+			}
+		}
+		stage('Test')	{
+			steps {
+				sh './execute'
+				echo 'Test Stage Successful'
+			}
+		}
+		stage('Deploy')	{
+			steps {
+				echo 'Deploy Stage Successful'
+			}
+		}
+	}
+	post {
+		failure {
+			echo 'Pipeline failed'
+		}
+	}
 }
